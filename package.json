@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "uuid": "^9.0.0"
+  },
+  "name": "todo-list_databases",
+  "version": "1.0.0",
+  "description": "In this a TODO List is being created which will store the tasks in the database",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vaibhav Goel",
+  "license": "ISC"
+}

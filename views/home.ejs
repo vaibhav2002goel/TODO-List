@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+
+        <script src="https://kit.fontawesome.com/a0b4a376bd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+
+    <body>
+        <div id="container">
+
+            <div id="page-heading-block">
+                <h1 id="page-heading">TODO App</h1>
+            </div>
+            
+            <!-- <hr> -->
+
+            <form action="/tasks/addTask" method="post">
+
+                <div id="description" class="elements-padding">
+                    <h4 id="description-heading"> <label for="description-input">DESCRIPTION</label></h4>
+                    <input name="description" id="description-input" class="data-input" type="text" placeholder="What do you need to do ?" required>
+                </div>
+                    
+
+                <div id="add-task-deatils">
+                    <div id="category" class="elements-padding">
+                        <h4 id="category-heading"> <label for="category-input">CATEGORY</label></h4>
+                        <select name="category" id="category-input" class="data-input" >
+                            <option value="Choose a Category" >Choose a Category</option>
+                            <option value="Work">Work</option>
+                            <option value="Home">Home</option>
+                            <option value="School">School</option>
+                            <option value="College">College</option>
+                            <option value="Others">Others</option>
+                        </select>
+                            
+                    </div>    
+                        
+                    <div id="due-date" class="elements-padding">
+                        <h4 id="dueDate-heading"> <label for="dueDate-input">DUE DATE</label></h4>
+                        <input name="date" type="date" id="dueDate-input" class="data-input" >
+                    </div>
+                </div>
+                            
+                
+                
+                    
+                <button type="submit" id="add-task" class="button-properties">
+                    <i class="fa-solid fa-plus" style="color: #ffffff;"></i> ADD TASK
+                </button>
+                    
+                
+                                               
+            </form>
+
+            <a href="/tasks/deleteTask">
+                <button id="delete-task" class="button-properties" type="submit">
+                    <i class="fa-solid fa-dumpster" style="color: #f9fafa;"></i> DELETE TASKS
+                </button>
+            </a>
+
+             <div id="tasks" style="height: auto;">
+                <ul style="list-style-type: none;padding-inline-start: 0px;">
+                    <% for(let task of tasks_list){ %>
+
+                        <li id="task-list-element">
+
+                            <div id="task-upper-border"></div>
+
+                            <div id="task-element-container">
+                                <div id="element1">
+
+                                    <div id="task-label-checkbox">
+                                        <%if(task.completed){%>
+                                                <input type="checkbox" id="<%= task.id %>" checked class="custom-checkbox" data-checked="checked" onclick="location.href='/tasks/toggleTask/?id=<%= task.id %>';">
+                                        <%}else{%>
+                                                <input type="checkbox" id="<%= task.id %>" class="custom-checkbox" data-checked="unchecked" onclick="location.href='/tasks/toggleTask/?id=<%= task.id %>';">
+                                        <%}%>
+                                        
+                                        <label id="<%= task.id %>" for="<%= task.id %>"><b><%= task.description %></b></label>
+                                    </div>
+
+                                    <div id="task-date">
+                                        <i class="fa fa-thin fa-calendar-days fa-" style="color: #d5d5d6;"></i>
+
+                                        <%if(task.month == 'No deadline'){%>
+                                            <p id="<%= task.id %>"><%= task.month %> <%= task.day %> <%= task.year %></p>
+
+                                        <%}else{%>
+                                            <p id="<%= task.id %>"><%= task.month %> <%= task.day %>, <%= task.year %></p>
+                                        <%}%>
+                                    </div>
+
+                                </div>
+                               
+                                <div class="task-category" id="<%= task.id %>">
+                                    <div>
+                                        <%= task.category %>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </li>
+                    <%}%>
+                </ul>
+             </div>
+
+         </div>
+
+
+         <script type="text/javascript" src="/javascript/home.js"></script>
+         
+    </body>
+</html>

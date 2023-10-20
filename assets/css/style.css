@@ -1,0 +1,210 @@
+html{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* This gives a horizontal line in the webpage */
+hr{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.elements-padding{
+    padding: 10px;
+}
+
+.data-input{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    padding: 2px;
+    width: 100%;
+    color: gray;
+}
+
+
+/********* CONTAINER *********/
+#container{
+    height: auto;
+    width: 60%;
+    margin: auto;
+    border: 4px solid gray;
+    border-style: inset;
+}
+
+
+/********* HEADING *********/
+#page-heading-block{
+    padding: 10px;
+    border-bottom: 2px solid gray;
+}
+
+#page-heading{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    text-align: center;
+    color: gray;
+    font-size: 50px;
+}
+
+
+/********* DESCRIPTION *********/
+#description{
+    border-bottom: 2px solid gray;
+}
+
+#description-heading{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+
+/********* ADD CATEGORY AND DUE-DATE *********/
+#add-task-deatils{
+    display: flex;
+    height: auto;
+    width: 100%;
+    border-bottom: 2px solid gray;
+}
+
+#category{
+    height: auto;
+    width: 50%;
+    border-right: 2px solid gray;
+}
+
+#category-heading{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: black;
+}
+
+
+#due-date{
+    height: 100px;
+    width: 50%;
+    color: black;
+}
+
+#dueDate-heading{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+
+/********* BUTTONS *********/
+
+.button-properties{
+    height: 10%;
+    width: 28%;
+    margin: 0 8px;
+    font-size: 25px;
+    color: white;
+    padding: 8px;
+}
+
+#add-task{
+    margin-top: 1%;
+    margin-left: 22%;
+    background-color: rgb(39, 38, 38);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+#add-task:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#delete-task{
+    position: relative;
+    top: -12vh;
+    left: 30vw;
+    background-color: rgb(241, 41, 41);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+#delete-task:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+/********* TASKS LIST *********/
+#tasks{
+    height: auto;
+    width: 95%;  
+    margin: auto;
+}
+
+#task-list-element{
+    padding: 8px;
+}
+
+#task-upper-border{
+    width: 100%;
+    border-top: 2px solid lightgray;
+}
+
+#task-element-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#element1{
+    width: 60%;
+    /* background-color: lightblue; */
+}
+
+#task-label-checkbox{
+    margin: 2% 2% 1% 1.5%;
+}
+
+#task-label-checkbox input{
+    margin-right: 3%;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+#task-label-checkbox input:hover{
+    cursor: pointer;
+}
+
+#task-label-checkbox label{
+    font-size: 30;
+    color: gray;
+}
+
+#task-date{
+    margin: 1% 2% 1% 10%;
+}
+
+#task-date p{
+    display: inline-block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: gray;
+}
+
+.task-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    margin: 2% 5% 1% 1.5%;
+    /* background-color: red; */
+    color: white;
+    border-radius: 4px;
+    font-size: larger; 
+}
+
+/* TOGGLE TASK */
+#element1 input:checked + label {
+    text-decoration: line-through;
+    color: lightgray;
+}
+
+/*
+#element1 input:checked + p {
+    text-decoration: line-through;
+    color: lightgray;
+} */
